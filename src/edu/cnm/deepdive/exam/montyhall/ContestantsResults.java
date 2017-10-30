@@ -7,6 +7,7 @@ import java.util.Random;
 public class ContestantsResults {
 
   private static final int DEFAULT_TRIAL_COUNT = 1000;
+  public static final String RESULT_STATEMENT = "In %d trials, switching doors won %d(%f) %n while sticking with the original selection won %d(%f)";
 
 
   public static void main(String [] args){
@@ -25,6 +26,6 @@ public class ContestantsResults {
         switchWin++;
       }
     }
-    System.out.printf("%d%n%d", stayWin, switchWin);
+    System.out.printf(RESULT_STATEMENT, trials, stayWin,((stayWin/trials) *100.0), switchWin ,((switchWin/trials) *100.0));
   }
 }
