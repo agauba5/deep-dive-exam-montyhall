@@ -54,3 +54,17 @@ Another insight is that switching doors is a different action than choosing betw
 remaining doors at random, as the first action uses the previous information and the latter 
 does not. Other possible behaviors than the one described can reveal different additional 
 information, or none at all, and yield different probabilities.
+
+
+##PSEUDOCODE
+
+1) Create an array of prizes.
+2) Define total number of trials by user input or use a default value of 1000.
+3) Define counters for staying with door or switching door.
+4) Create a random generator.
+5) Iterate over number of trials
+    a)create a random selection from array of prizes
+    b)evaluate if the value is the "Big Prize"
+         -if it is, add to Stay count
+         -if it is not, add to Switch count
+ 6) Print the values and percentages
