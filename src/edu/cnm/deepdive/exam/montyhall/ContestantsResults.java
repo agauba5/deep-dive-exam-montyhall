@@ -10,6 +10,15 @@ public class ContestantsResults {
   public static final String RESULT_STATEMENT = "In %d trials, switching doors won %d(%.2f) %n while sticking with the original selection won %d(%.2f)";
 
 
+  /**
+   * Conducts a Monte Carlo simualtion and reports the results.
+   * Allows the user to specify a number of trails to run with a default of 1,000, using generation of
+   * random events/numbers corresponding to the big prize, contestant's choice and the revealed alternative.
+   * Determines whether the "stick with the original selection" or "switch selection" would
+   * have won in this instance, and record that result accordingly.
+   *
+   * @param args The number of times the method will run trials.
+   */
   public static void main(String [] args){
 
     int stayWin = 0;
@@ -26,7 +35,9 @@ public class ContestantsResults {
         switchWin++;
       }
     }
-    double percentSwitchWin = switchWin/trials *100.0;
+    /**
+     * Will print out the results of stayWin/trails and switchWin/trails.
+     */
     System.out.printf(RESULT_STATEMENT, trials, stayWin,(100.0*stayWin)/trials, switchWin , (100.0*switchWin)/trials);
   }
 }
