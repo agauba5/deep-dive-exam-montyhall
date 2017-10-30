@@ -56,7 +56,7 @@ does not. Other possible behaviors than the one described can reveal different a
 information, or none at all, and yield different probabilities.
 
 
-##PSEUDOCODE
+## PSEUDOCODE
 
 1) Create an array of prizes.
 2) Define total number of trials by user input or use a default value of 1000.
