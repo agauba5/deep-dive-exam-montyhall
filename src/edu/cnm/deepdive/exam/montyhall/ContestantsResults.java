@@ -7,7 +7,7 @@ import java.util.Random;
 public class ContestantsResults {
 
   private static final int DEFAULT_TRIAL_COUNT = 1000;
-  public static final String RESULT_STATEMENT = "In %d trials, switching doors won %d(%.2f) %n while sticking with the original selection won %d(%.2f)";
+  public static final String RESULT_STATEMENT = "In %d trials, switching doors won %d(%.2f%%) of the time %n while sticking with the original selection won %d(%.2f%%) of the time";
 
 
   /**
@@ -25,7 +25,6 @@ public class ContestantsResults {
     int switchWin = 0;
     Random rng = new Random();
     Prize contestantsChoice;
-
     int trials = args.length > 0 ? Integer.parseInt(args[0]): DEFAULT_TRIAL_COUNT;
     for (int i = 0; i< trials; i++){
       contestantsChoice = Prize.values()[rng.nextInt(Prize.values().length)];
@@ -35,9 +34,11 @@ public class ContestantsResults {
         switchWin++;
       }
     }
+
     /**
      * Will print out the results of stayWin/trails and switchWin/trails.
+     *
      */
-    System.out.printf(RESULT_STATEMENT, trials, stayWin,(100.0*stayWin)/trials, switchWin , (100.0*switchWin)/trials);
+    System.out.printf(RESULT_STATEMENT, trials, switchWin , (100.0*switchWin)/trials , stayWin,(100.0*stayWin)/trials);
   }
 }
